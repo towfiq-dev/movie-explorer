@@ -1,3 +1,4 @@
+import ExploreByGenre from "../components/ExploreByGenre";
 import HeroBanner from "../components/HeroBanner";
 import TrendingMovies from "../components/TrendingMovies";
 
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <HeroBanner />
        <TrendingMovies />
+       <ExploreByGenre />
       {/* Featured / trending shows section will be added in a later part */}
     </div>
   );
