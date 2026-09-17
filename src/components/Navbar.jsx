@@ -108,7 +108,16 @@ const Navbar = () => {
     </span>
   )}
             </NavLink>
-            
+            <NavLink
+  to="/contact"
+  className={({ isActive }) =>
+    `btn btn-sm btn-ghost normal-case text-sm font-medium ${
+      isActive ? "text-primary" : "text-base-content/70"
+    }`
+  }
+>
+  Support
+            </NavLink>
           </nav>
 
           {/* Watchlist Indicator Dropdown */}
