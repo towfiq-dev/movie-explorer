@@ -1,5 +1,6 @@
 import ExploreByGenre from "../components/ExploreByGenre";
 import HeroBanner from "../components/HeroBanner";
+import PlatformStats from "../components/PlatformStats";
 import TopRatedHighlights from "../components/TopRatedHighlights";
 import TrendingMovies from "../components/TrendingMovies";
 
@@ -7,6 +8,7 @@ const Home = () => {
   return (
     <div>
       <HeroBanner />
+      <PlatformStats />
        <TrendingMovies />
        <ExploreByGenre />
        <TopRatedHighlights />

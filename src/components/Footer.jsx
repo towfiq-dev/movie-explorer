@@ -106,7 +106,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-base-content/60">
-          <p>© {new Date().getFullYear()} MovieExplorer. Built with React, Tailwind &amp; DaisyUI.</p>
+          <p>© {new Date().getFullYear()} MovieExplorer. Built with MovieExplorer.</p>
           <p className="flex items-center gap-1">
             Crafted with <FaHeart className="text-error text-[10px]" /> for film lovers
           </p>
