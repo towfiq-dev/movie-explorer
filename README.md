@@ -1,54 +1,58 @@
-# 🎬 MovieExplorer
+# MovieExplorer 🎬
 
-A fully responsive movie/show browsing web app built with React, powered by the free, keyless [TVMaze API](https://www.tvmaze.com/api). Browse shows, search by title, and view full details in an interactive modal.
+MovieExplorer is an entertainment discovery web platform built with React, Tailwind CSS, DaisyUI, and the TVMaze API. It enables users to browse television shows and movies, view detailed synopses, explore genres, manage a personal watchlist, and contact support[cite: 1, 4, 9].
+
+---
 
 ## Features
 
-- **Home page** — hero banner with an "Explore Now" CTA into the listing page
-- **Movie Listing page** — debounced search (400ms) with a responsive card grid
-- **Details Modal** — full show info (genres, status, network, runtime, overview), closes on ✕, outside click, or `Esc`
-- **Loading / error / empty states** on every API call
-- **Poster fallback** for missing or broken images
-- **Fully responsive**: 1-column grid on mobile, 2 on tablet, 3–5 on desktop, with 44px+ touch targets throughout
+* **Cinematic Hero Experience:** Responsive hero banner featuring overlay gradients and instant navigation actions[cite: 1, 3].
+* **Live Catalog & Search:** Debounced title searching alongside comprehensive show listings pulled directly from the TVMaze REST API[cite: 4, 5].
+* **Detailed Show Modal:** Overlay dialog showcasing ratings, premiere years, status, runtime, genres, and storyline synopses[cite: 9].
+* **Interactive Genre Catalog:** Browse titles organized by categories including Action, Drama, Sci-Fi, Crime, and Horror.
+* **Featured & Hall of Fame Spotlights:** Curated carousels and highlight grids showcasing all-time top-rated television shows[cite: 3].
+* **Persistent Watchlist (State & LocalStorage):** Global watchlist context that retains saved shows across browser sessions, backed by responsive badge counters and animated bookmark buttons[cite: 2].
+* **Notification Feedback:** Toast notifications powered by `react-hot-toast` that trigger upon adding or removing watchlist items.
+* **Customer Support Page:** Responsive feedback and support form complete with categorized contact channels.
+* **Platform Metrics:** Visual analytics showcase indexing numbers, active viewers, and global network coverage.
+
+---
 
 ## Tech Stack
 
-- React 19 + Vite
-- react-router-dom v7 (client-side routing)
-- Tailwind CSS v4 + DaisyUI
-- react-icons
-- TVMaze API (no API key required)
+* **Frontend Framework:** React (Vite)[cite: 2]
+* **Routing:** React Router DOM[cite: 1, 2]
+* **Styling:** Tailwind CSS, DaisyUI
+* **Icons:** React Icons (`react-icons/fa`, `react-icons/hi`)[cite: 6]
+* **Notifications:** React Hot Toast
+* **Data Source:** [TVMaze Public REST API](https://www.tvmaze.com/api)[cite: 5]
 
-## Getting Started
-
-```bash
-npm install
-npm run dev       # start local dev server
-npm run build     # production build -> dist/
-npm run preview   # preview the production build locally
-npm run lint      # lint src/
-```
-
-## Environment Variables
-
-**None are required.** The TVMaze API (`https://api.tvmaze.com`) is public and doesn't need an API key, so there is no `.env` file in this project. If you later swap in an API that requires a key, add a `VITE_`-prefixed variable (e.g. `VITE_API_KEY`) to a local `.env` file (already git-ignored) and set the same variable in your Vercel project's Environment Variables settings — never commit real keys to source control.
-
-## Deploying to Vercel
-
-This project is Vercel-ready out of the box:
-
-1. Push this repo to GitHub.
-2. Import it in Vercel — it auto-detects the Vite framework preset (build command `vite build`, output directory `dist`).
-3. No environment variables need to be configured (see above).
-4. `vercel.json` includes a rewrite rule so client-side routes (e.g. `/movies`) work correctly on direct load / page refresh instead of 404ing.
-
-That's it — no manual configuration needed after deploy.
+---
 
 ## Project Structure
 
-```
+```text
 src/
-  api/          # TVMaze API helper functions
-  components/   # Navbar, Footer, HeroBanner, SearchBar, MovieCard, MovieGrid, MovieModal
-  pages/        # Home, MovieListing
-```
+├── api/
+│   └── tvmaze.js               # Centralized API fetch handlers
+├── components/
+│   ├── ExploreByGenre.jsx      # Genre category navigation grid
+│   ├── Footer.jsx              # Responsive multi-column footer
+│   ├── HeroBanner.jsx          # Cinematic hero section
+│   ├── MovieCard.jsx           # Reusable poster & detail card
+│   ├── MovieGrid.jsx           # Responsive show catalog grid
+│   ├── MovieModal.jsx          # Pop-up modal for detailed information
+│   ├── Navbar.jsx              # Sticky navigation with watchlist dropdown
+│   ├── PlatformStats.jsx       # Platform analytics & statistics
+│   ├── SearchBar.jsx           # Debounced input search component
+│   ├── TopRatedHighlights.jsx  # All-time masterpiece spotlight
+│   └── TrendingMovies.jsx      # Featured shows limited showcase
+├── context/
+│   └── WatchlistContext.jsx    # Global watchlist state & LocalStorage sync
+├── pages/
+│   ├── ContactPage.jsx         # Support & customer service page
+│   ├── Home.jsx                # Landing page aggregating key sections
+│   ├── MovieListing.jsx        # Searchable and paginated catalog page
+│   └── WatchlistPage.jsx       # Personal saved library & FAQ
+├── App.jsx                     # Global application layout & route setup
+└── main.jsx                    # Root mount point with Router & Context
