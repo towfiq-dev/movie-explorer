@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import MovieListing from "./pages/MovieListing";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -15,6 +16,14 @@ const App = () => {
         </Routes>
       </main>
       <Footer />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          duration: 2500,
+        }}
+      />
     </div>
   );
 };
