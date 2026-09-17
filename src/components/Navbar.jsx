@@ -93,6 +93,22 @@ const Navbar = () => {
             >
               Browse
             </NavLink>
+            <NavLink
+  to="/watchlist"
+  className={({ isActive }) =>
+    `btn btn-sm btn-ghost normal-case text-sm font-medium ${
+      isActive ? "text-primary" : "text-base-content/70"
+    }`
+  }
+>
+  Watchlist
+  {watchlist.length > 0 && (
+    <span className="badge badge-secondary badge-xs ml-1">
+      {watchlist.length}
+    </span>
+  )}
+            </NavLink>
+            
           </nav>
 
           {/* Watchlist Indicator Dropdown */}

@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import MovieListing from "./pages/MovieListing";
 import { Toaster } from "react-hot-toast";
+import WatchlistPage from "./pages/WatchlistPage";
+import ContactPage from "./pages/ContactPage";
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<MovieListing />} />
+          <Route path="/watchlist" element={<WatchlistPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       <Footer />
